@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master, Adding_php83 ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
