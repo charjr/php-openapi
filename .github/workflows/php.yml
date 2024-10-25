@@ -56,6 +56,11 @@ jobs:
             symfony-yaml: '^7'
           - php: '7.4'
             symfony-yaml: '^7'
+          # symfony/yaml v7 does not run on PHP 8.0 & 8.1
+          - php: '8.0'
+            symfony-yaml: '^7'
+          - php: '8.1'
+            symfony-yaml: '^7'
           # symfony/yaml v3.4 is not compatible with PHP 8.0 but has no upper-bound, so it installs on it
           - php: '8.0'
             symfony-yaml: '^3.4'
@@ -97,6 +102,10 @@ jobs:
 
       - name: PHPUnit tests
         run: make test
+
+      - name: PHPUnit tests
+        run: make test-debug
+        if: matrix.php == '8.3'
 
       - name: Code coverage
         run: make coverage
