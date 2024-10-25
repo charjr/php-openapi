@@ -49,7 +49,7 @@ unit:
 test-debug: unit-debug test-recursion.json test-recursion2.yaml test-recursion3_index.yaml test-empty-maps.json
 
 unit-debug:
-	$(DOCKER_PHP) php $(PHPARGS) $(XPHPARGS) vendor/bin/phpunit --debug --colors=always $(TESTCASE)
+	$(DOCKER_PHP) php $(PHPARGS) $(XPHPARGS) vendor/bin/phpunit --debug --testdox --colors=always -c phpunit11.xml.dist $(TESTCASE)
 
 # test specific JSON files in tests/spec/data/
 # e.g. test-recursion will run validation on tests/spec/data/recursion.json
