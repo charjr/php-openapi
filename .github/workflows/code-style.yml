@@ -2,7 +2,7 @@ name: Code Style
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, Adding_php83 ]
   pull_request:
     branches: [ master ]
 
