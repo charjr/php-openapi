@@ -102,6 +102,7 @@ jobs:
 
       - name: PHPUnit tests
         run: make test
+        if: matrix.php < '8.3'
 
       - name: PHPUnit tests
         run: make test-debug
