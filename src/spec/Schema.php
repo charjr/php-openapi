@@ -116,7 +116,7 @@ class Schema extends SpecBaseObject
             //'additionalProperties' => 'boolean' | ['string', Schema::class], handled in constructor
             'propertyNames' => Schema::class,
             'unevaluatedItems' => Schema::class,
-            'unevaluatedProperties' => Schema::class,
+            // 'unevaluatedProperties' => Schema::class,
             'description' => Type::STRING,
             'format' => Type::STRING,
             'default' => Type::ANY,
