@@ -116,7 +116,7 @@ class Schema extends SpecBaseObject
             //'additionalProperties' => 'boolean' | ['string', Schema::class], handled in constructor
             'propertyNames' => Schema::class,
             'unevaluatedItems' => Schema::class,
-            // 'unevaluatedProperties' => Schema::class,
+             //'unevaluatedProperties' => Schema::class,
             'description' => Type::STRING,
             'format' => Type::STRING,
             'default' => Type::ANY,
@@ -172,11 +172,11 @@ class Schema extends SpecBaseObject
             }
         }
 
-        if (isset($data['exclusiveMaximum']) && !in_array(gettype($data['exclusiveMaximum']), ['bool', 'double', 'integer'])) {
+        if (isset($data['exclusiveMaximum']) && !in_array(gettype($data['exclusiveMaximum']), ['boolean', 'double', 'integer'])) {
             throw new TypeErrorException(sprintf('Schema::$exclusiveMinimum MUST be either boolean or a number, "%s" given', gettype($data['exclusiveMaximum'])));
         }
 
-        if (isset($data['exclusiveMinimum']) && !in_array(gettype($data['exclusiveMinimum']), ['bool', 'double', 'integer'])) {
+        if (isset($data['exclusiveMinimum']) && !in_array(gettype($data['exclusiveMinimum']), ['boolean', 'double', 'integer'])) {
             throw new TypeErrorException(sprintf('Schema::$exclusiveMinimum MUST be either boolean or a number, "%s" given', gettype($data['exclusiveMinimum'])));
         }
 
